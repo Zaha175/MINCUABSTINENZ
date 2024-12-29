@@ -11,27 +11,28 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
         }
+
         .container {
             display: flex;
             gap: 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
-        .questions {
-            flex: 1;
-            min-width: 300px;
-            height: 90vh;
-            overflow-y: auto;
-        }
-        .answers {
+
+        .questions, .answers {
             flex: 1;
             min-width: 300px;
             padding: 20px;
-            background: #f5f5f5;
-            border-radius: 8px;
             height: 90vh;
             overflow-y: auto;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); /* Mehr Schatten */
+            border: none; /* Rand entfernt */
         }
+
+        .questions .question-list {
+            /* Hier werden die Buttons platziert */
+        }
+
         button {
             display: block;
             width: 100%;
@@ -45,9 +46,11 @@
             text-align: left;
             font-size: 14px;
         }
+
         button:hover {
             background: #0052a3;
         }
+
         .search-box {
             width: 100%;
             padding: 10px;
@@ -55,6 +58,15 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+
+        .answers {
+            background: #f5f5f5; /*  HINTERGRUNDFARBE BEHALTEN  */
+        }
+
+        .answers h3 {
+            color: #007bff; /* ÜBERSCHRIFTENFARBE BEHALTEN */
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -70,7 +82,7 @@
     <div class="container">
         <div class="questions">
             <input type="text" class="search-box" id="searchBox" placeholder="Caută întrebări..." onkeyup="searchQuestions()">
-            <div id="questionsList">
+            <div class="question-list" id="questionsList">
                 <!-- Întrebările vor fi adăugate prin JavaScript -->
             </div>
         </div>
@@ -138,9 +150,9 @@
                 "answer": "Între 20 și 30 de ani , am băut 3-4 beri de 0,5 litri și 2 duble de trei sau patru ori pe lună, mai ales în weekend, de obicei la ocazii speciale sau la restaurant. \n\nDe la 30 la 34 de ani , când am venit in Germania, deci în ultimii patru ani, mi-am schimbat comportamentul de a bea în mod negativ, am început să beau regulat, din păcate, cantitatea de băutură a crescut! Diferit după muncă, de obicei miercuri, joi 2-3 beri. În weekend 4-5, 5-6, 7-8 beri. \n\nCantități maxime: la fiecare 2 luni 9-10 beri + 2 duble, deci de aproximativ 6 ori pe an.                        "
             },
             {
-                "question": "De ce ați băut? Cauze?",
-                "answer": "Cauza o văd la mine în trecut și se află în gândurile și sentimentele mele.\n\nÎn România, părinții mei sau ocupat de noi, au avut timp pentru mine. La școală a fost bine, mi-a plăcut.\n\nVenind în Germania din 2018, la 30 de ani, pe de o parte o viață nouă, a fost greu, dar și despărțirea de fosta mea prietenă, despărțirea de foștii mei prieteni și familie, de grupul meu stabil de apartenență si recunoaștere, m-am simțit singur și pierdut. Am început să consum alcool regulat, la început și singur, da!\n\nConsumul de alcool m-a ajutat să-mi reduc stresul și să uit de probleme. Am găsit prieteni români la locul de muncă și am început să beau împreună cu ei, simțindu-mă acceptat. \n\nDoream să fiu pe placul tuturor, i-am ajutat pe toți și nu am putut spune \"nu\", mi-a fost teamă să fiu respins. Nu m-am arătat slab și nu am vorbit cu nimeni despre probleme. În final, am pierdut controlul asupra consumului de alcool."
-            },
+    "question": "De ce ați băut? Cauze?",
+    "answer": "Cauza o văd la mine în trecut și se află în gândurile și sentimentele mele. Mama a murit, iar când aveam 8 ani, a murit și tatăl meu. Am fost nevoit să mă mut la bunici. Eram foarte retras la școală. În copilărie, mă gândeam că este ceva în neregulă cu mine, pentru că eram diferit de ceilalți și că nu valorez nimic. Mă simțeam marginalizat. Am ieșit mai ales cu prietenii și m-am simțit o parte din grup. Întotdeauna am vrut să le fac la pe plac tuturor și nu am putut niciodată să refuz, să spun nu. La școală, eram adesea tachinat și mă simțeam din nou singur, ca și cum nu aș aparține. La școala profesională a fost minunat. Am primit multe laude și recunoaștere. Mi-a plăcut foarte mult să merg acolo. Venind în Germania din 2018, la 30 de ani, pe de o parte o viață nouă, a fost greu, dar și despărțirea de fosta mea prietenă, despărțirea de foștii mei prieteni și familie, de grupul meu stabil de apartenență si recunoaștere, m-am simțit singur și pierdut. Am început să consum alcool regulat, la început și singur, da! Consumul de alcool m-a ajutat să-mi reduc stresul și să uit de probleme. Am găsit prieteni români la locul de muncă și am început să beau împreună cu ei, simțindu-mă acceptat. Doream să fiu pe placul tuturor, i-am ajutat pe toți și nu am putut spune \"nu\", mi-a fost teamă să fiu respins, ca și in trecut, ca copil. Nu m-am arătat slab și nu am vorbit cu nimeni despre probleme. În final, am pierdut controlul asupra consumului de alcool."
+},
             {
                 "question": "Cum va-ți descurcat cu stresul în trecut?",
                 "answer": "În trecut în România am vorbit cu familia și partenera."
